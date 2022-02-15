@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ServerSide.master.cs" Inherits="DrinkOrderSystem.ServerSide.ServerSide" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/bootstrap/js/bootstrap.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <style>
+        .b1 {
+            width: 100%;
+            height: 100%;
+            float: left;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body style="background-color: antiquewhite">
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="row">
+                <%--<asp:Button ID="Button1" class="btn btn-primary" runat="server" Height="5" />--%>
+                <h4>
+                    <asp:Label ID="lbTopMsg" runat="server" Text="歡迎回來~!"></asp:Label></h4>
+                <div>
+                    <table width="900">
+                        <tr>
+                            <td>
+                                <asp:Button ID="btnLogut" class="btn btn-secondary" runat="server" Text="登出" onclientclick="javascript:return confirm('即將登出，將不保留資料');" OnClick="btnLogut_Click"/><br />
+                                <img class="auto-style1" src="../ImagesServer/SystemLogo.png" width="50"/></td>
+                            <td>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="d4">
+                                    <a href="../SystemAdmin/OrderStart.aspx">
+                                        <img src="../ImagesServer/StartOrderList.png" width="200" />
+                                    </a>
+                                    <br />
+                                    <a href="../SystemAdmin/UserPage.aspx">
+                                        <img src="../ImagesServer/UserPage.png" width="200" />
+                                    </a>
+                                    <br />
+                                    <a href="../SystemAdmin/NowOrdering.aspx">
+                                        <img src="../ImagesServer/NowOrderList.png" width="200" />
+                                    </a>
+                                    <br />
+                                    <a href="../SystemAdmin/UserRecords.aspx">
+                                        <img src="../ImagesServer/UserOrderList.png" width="200" />
+                                    </a>
+                                    <br />
+                                    <a href="../SystemAdmin/OrderRecords.aspx">
+                                        <img src="../ImagesServer/OrderList.png" width="200" />
+                                    </a>
+                                    <br />
+                                    <asp:Literal ID="ltlManger" runat="server" Visible="false">
+                                    <a href="../UserManagement/UserList.aspx">
+                                        <img src="../ImagesServer/UserInfoList.png" width="200"/>
+                                    </a>
+                                    <br />
+                                    <a href="../ProductManagement/ProductList.aspx">
+                                        <img src="../ImagesServer/ProductsList.png" width="200"/>
+                                    </a>
+                                    <br />
+                                    </asp:Literal>
+                                    <asp:Literal ID="ltSManager" runat="server" Visible="false"><img src="../ImagesServer/SuppliersList.png"width="250"/></asp:Literal>
+                                </div>
+                            </td>
+                            <td width="1200">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <table>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

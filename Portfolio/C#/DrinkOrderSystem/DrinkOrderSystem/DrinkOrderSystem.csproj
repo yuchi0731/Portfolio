@@ -1,0 +1,457 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{015BAD4F-B379-4787-AF36-F7E7C0D2C632}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DrinkOrderSystem</RootNamespace>
+    <AssemblyName>DrinkOrderSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\css\bootstrap-grid.css" />
+    <Content Include="bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap\js\bootstrap.esm.js" />
+    <Content Include="bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="ClientSide\Default.aspx" />
+    <Content Include="ClientSide\ImagesClient\admin.png" />
+    <Content Include="ClientSide\ImagesClient\BG.png" />
+    <Content Include="ClientSide\ImagesClient\Logo.png" />
+    <Content Include="ClientSide\ImagesClient\user.png" />
+    <Content Include="ClientSide\Login.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ServerSide\ImagesServer\admin.png" />
+    <Content Include="ServerSide\ImagesServer\DefaultPhoto_admin.png" />
+    <Content Include="ServerSide\ImagesServer\DefaultPhoto_seniorAdministrator.png" />
+    <Content Include="ServerSide\ImagesServer\DefaultPhoto_user.png" />
+    <Content Include="ServerSide\ImagesServer\DefaultPictrue_product.png" />
+    <Content Include="ServerSide\ImagesServer\HappyDrink.png" />
+    <Content Include="ServerSide\ImagesServer\Logo.png" />
+    <Content Include="ServerSide\ImagesServer\NowOrderList.png" />
+    <Content Include="ServerSide\ImagesServer\OrderList.png" />
+    <Content Include="ServerSide\ImagesServer\ProductsList.png" />
+    <Content Include="ServerSide\ImagesServer\StartOrderList.png" />
+    <Content Include="ServerSide\ImagesServer\SuppliersList.png" />
+    <Content Include="ServerSide\ImagesServer\SystemLogo.png" />
+    <Content Include="ServerSide\ImagesServer\UserInfoList.png" />
+    <Content Include="ServerSide\ImagesServer\UserOrderList.png" />
+    <Content Include="ServerSide\ImagesServer\UserPage.png" />
+    <Content Include="ServerSide\ImagesServer\WhiteAlley.jpg" />
+    <Content Include="ServerSide\ImagesServer\drink_icon.png" />
+    <Content Include="ServerSide\ImagesServer\Fiftylan.png" />
+    <Content Include="ServerSide\ImagesServer\Milkshop.png" />
+    <Content Include="ServerSide\ProductManagement\AddProduct.aspx" />
+    <Content Include="ServerSide\ProductManagement\ModifyProduct.aspx" />
+    <Content Include="ServerSide\ProductManagement\ProductList.aspx" />
+    <Content Include="ServerSide\SystemAdmin\NowOrdering.aspx" />
+    <Content Include="ServerSide\SystemAdmin\OderMid.aspx" />
+    <Content Include="ServerSide\SystemAdmin\OrderDetailInfo.aspx" />
+    <Content Include="ServerSide\SystemAdmin\OrderRecords.aspx" />
+    <Content Include="ServerSide\SystemAdmin\OrderStart.aspx" />
+    <Content Include="ServerSide\SystemAdmin\ResultCheckJS.aspx" />
+    <Content Include="ServerSide\SystemAdmin\SendOrder.aspx" />
+    <Content Include="ServerSide\SystemAdmin\UpdateDetailInfo.aspx" />
+    <Content Include="ServerSide\SystemAdmin\UserPage.aspx" />
+    <Content Include="ServerSide\SystemAdmin\UserRecords.aspx" />
+    <Content Include="ServerSide\UserControl\ucPager.ascx" />
+    <Content Include="ServerSide\UserManagement\CreateNewUser.aspx" />
+    <Content Include="ServerSide\UserManagement\ModifyPassword.aspx" />
+    <Content Include="ServerSide\UserManagement\ModifyUserInfo.aspx" />
+    <Content Include="ServerSide\UserManagement\UserList.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientSide\ClientSide.Master.cs">
+      <DependentUpon>ClientSide.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientSide\ClientSide.Master.designer.cs">
+      <DependentUpon>ClientSide.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ClientSide\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientSide\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientSide\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientSide\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerSide\ProductManagement\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\ProductManagement\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\ProductManagement\ModifyProduct.aspx.cs">
+      <DependentUpon>ModifyProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\ProductManagement\ModifyProduct.aspx.designer.cs">
+      <DependentUpon>ModifyProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\ProductManagement\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\ProductManagement\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\ServerSide.Master.cs">
+      <DependentUpon>ServerSide.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\ServerSide.Master.designer.cs">
+      <DependentUpon>ServerSide.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\NowOrdering.aspx.cs">
+      <DependentUpon>NowOrdering.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\NowOrdering.aspx.designer.cs">
+      <DependentUpon>NowOrdering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\OderMid.aspx.cs">
+      <DependentUpon>OderMid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\OderMid.aspx.designer.cs">
+      <DependentUpon>OderMid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\OrderDetailInfo.aspx.cs">
+      <DependentUpon>OrderDetailInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\OrderDetailInfo.aspx.designer.cs">
+      <DependentUpon>OrderDetailInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\OrderRecords.aspx.cs">
+      <DependentUpon>OrderRecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\OrderRecords.aspx.designer.cs">
+      <DependentUpon>OrderRecords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\OrderStart.aspx.cs">
+      <DependentUpon>OrderStart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\OrderStart.aspx.designer.cs">
+      <DependentUpon>OrderStart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\ResultCheckJS.aspx.cs">
+      <DependentUpon>ResultCheckJS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\ResultCheckJS.aspx.designer.cs">
+      <DependentUpon>ResultCheckJS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\SendOrder.aspx.cs">
+      <DependentUpon>SendOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\SendOrder.aspx.designer.cs">
+      <DependentUpon>SendOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\UpdateDetailInfo.aspx.cs">
+      <DependentUpon>UpdateDetailInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\UpdateDetailInfo.aspx.designer.cs">
+      <DependentUpon>UpdateDetailInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\UserPage.aspx.cs">
+      <DependentUpon>UserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\UserPage.aspx.designer.cs">
+      <DependentUpon>UserPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\UserRecords.aspx.cs">
+      <DependentUpon>UserRecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\SystemAdmin\UserRecords.aspx.designer.cs">
+      <DependentUpon>UserRecords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\UserControl\ucPager.ascx.cs">
+      <DependentUpon>ucPager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\UserControl\ucPager.ascx.designer.cs">
+      <DependentUpon>ucPager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\UserManagement\CreateNewUser.aspx.cs">
+      <DependentUpon>CreateNewUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\UserManagement\CreateNewUser.aspx.designer.cs">
+      <DependentUpon>CreateNewUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\UserManagement\ModifyPassword.aspx.cs">
+      <DependentUpon>ModifyPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\UserManagement\ModifyPassword.aspx.designer.cs">
+      <DependentUpon>ModifyPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\UserManagement\ModifyUserInfo.aspx.cs">
+      <DependentUpon>ModifyUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\UserManagement\ModifyUserInfo.aspx.designer.cs">
+      <DependentUpon>ModifyUserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerSide\UserManagement\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServerSide\UserManagement\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientSide\ClientSide.Master" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap.css.map" />
+    <Content Include="bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="bootstrap\js\bootstrap.js.map" />
+    <Content Include="bootstrap\js\bootstrap.min.js.map" />
+    <None Include="packages.config" />
+    <Content Include="ServerSide\ServerSide.Master" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="ServerSide\Text\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DOS_Auth\DOS_Auth.csproj">
+      <Project>{d6d33867-cdd8-47bb-9ccb-850f4250bdd3}</Project>
+      <Name>DOS_Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOS_DBSoure\DOS_DBSoure.csproj">
+      <Project>{c83d443f-2986-4490-bc9a-3e7c8216cb1f}</Project>
+      <Name>DOS_DBSoure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOS_Models\DOS_Models.csproj">
+      <Project>{fb0d1951-f84a-45e2-9e6f-c3960383b71d}</Project>
+      <Name>DOS_Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOS_ORM\DOS_ORM.csproj">
+      <Project>{113ee810-4878-4a4e-9f9d-1977f6761d26}</Project>
+      <Name>DOS_ORM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58038</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58038/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
