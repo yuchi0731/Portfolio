@@ -1,7 +1,11 @@
-         
 [GitHub根目錄](https://github.com/yuchi0731/Portfolio)
 ---
-根目錄資料夾 Portfolio 含有
+##### 根目錄資料夾 Portfolio 包含三個資料夾
+- ASP.NET MVC
+- C#
+- HTML
+
+##### 各資料夾包含各語言專案與練習
 NO.|外層資料夾|專案名稱|概要|連結
 ---|---|---|---|---|
 1|ASP.NET MVC|TryMVC|利用ASP.NET MVC製作列表的增刪修功能|[列表增刪修](https://github.com/yuchi0731/Portfolio/tree/main/Portfolio/ASP.NET%20MVC/TryMVC)
