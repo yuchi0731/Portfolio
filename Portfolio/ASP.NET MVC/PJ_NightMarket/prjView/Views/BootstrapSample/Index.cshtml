@@ -1,0 +1,24 @@
+﻿@model IEnumerable<prjView.Models.NightMarket>
+
+@{
+    ViewBag.Title = "台中各大夜市";
+}
+
+<h2>台中各大夜市</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        string imgsrc = @item.Id + ".jpg";
+        <div class="col-lg-4">
+           <div class="thumbnail">
+               <img src="~/images/@imgsrc" style="width:100%">
+               <div class="caption">
+                   <h2>@item.Name</h2>
+                   <p>@item.Address</p>
+                   <p><a href="https://www.google.com.tw/maps/place/@item.Address" class="btn btn-success">google地圖</a></p>
+               </div>
+           </div>
+       </div>
+    }
+</div>
