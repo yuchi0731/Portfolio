@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!-- 描述網頁為哪國語言的類型，參考，最好一致
+    lang:Language
+    en:english 
+    ↓語系代碼，台灣是zh-tw-->
+<html lang="zh-tw">
+<head>
+    <!-- head是給瀏覽器辨識的
+         由UTF-8來辨識真正運作的語系 
+         character set -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDOLY PRIDE fans/アンケート</title>
+    <link rel="stylesheet" href="IDOLY PRIDECSS.CSS">
+ 
+    <style>
+            
+        .pic1 img{transform:scale(1,1);transition: all 0.5s ease-out;}
+        .pic1 img:hover{transform:scale(1.4,1.4);}
+        .pic1 img:hover{background-color:rgba(255, 255, 255, 0.3);}
+        .pic1:hover{opacity: 0.9; position:absolute;  z-index:50}
+
+        .pic2 img{transform:scale(1,1);transition: all 0.5s ease-out;}
+        .pic2 img:hover{transform:scale(1.2,1.2);}
+        .pic2 img:hover{background-color:rgba(255, 255, 255, 0.3);}
+        .pic2:hover{opacity: 0.9; z-index:10;}
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- 首頁  關於我  我的作品  我的收藏  與我聯絡 -->
+    <!-- 首頁  關於本公司  產品介紹  相關經銷商  與本公司聯絡 -->
+    <body background="img/アンケート2.jpg"></body>
+    <table border="0" width="1890" cellspacing="5">
+        <tr>
+            <td id="logo" width="200">
+                <a href="Homepage.html"><img align="center" src="img/Log-image.png" width="300" title="ホームページへ"></a>
+            </td>
+            <!-- align:對齊,left;center;right預設左右靠左而上下置中 -->
+            
+            <td id="logo" align="center">
+                <h1>何か話したいこと...？</h1>
+            </td>
+
+        </tr>
+        <tr>
+            <td id="menu" valign="top">
+                <ul>
+                    <h2>リスト</h2>
+                    <a href="mainpage.html">IDOLY PRIDE メイン ページ</a><br>
+                    <a href="PROJECT_IDOLY PRIDE.html">IDOLY PRIDE Project</a>
+                    <h2>メンバー</h2>
+                    <a href="メンバー_月のテンペスト.html">月のテンペスト</a><br>
+                    <a href="メンバー_サニーピース.html">サニーピース</a><br>
+                    <a href="メンバー_TRINITYAiLE.html">TRINITYAiLE</a><br>
+                    <a href="メンバー_LizNoir.html">LizNoir</a><br>
+                    <a href="メンバー_長瀬麻奈.html">長瀬麻奈</a><br>
+                    <h2>活動</h2>
+                    <a href="活動_MV.html">MV</a><br>
+                    <a href="活動_ゲーム.html">ゲーム</a>
+                    <h2>他の</h2>
+                    <a href="https://idolypride.jp/">公式ホームページ</a><br>
+                    <a href="https://anime.idolypride.jp/">公式アニメページ</a><br>
+                    <a href="アンケート.html">アンケート</a>
+                </ul>
+
+
+            </td>
+            <!-- v:vertical垂直;align:對齊 -->
+            <td id="maintime" valign="top">
+                <br>
+                <!-- form:表單，可設定到哪台主機的程式 -->
+                <!-- action:將東西送到哪個地方；送到主機端login.aspx -->
+                <form action="login.aspx">
+                    <table border="0" width="1500" align="center">
+                        <tr>
+                            <td width="200" align="right">
+                                ニックネーム
+                            </td>
+                            <!-- input:讓使用者輸入的地方 -->
+                            <!-- text:純粹填文字 -->
+                            <!-- type為屬性，細節好分類到主機，也要備註欄位來分類;如name;realname可以自訂(變數名稱) -->
+                            <td>
+                                <input type="text" name="realname">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="200" align="right">
+                                性别
+                            </td>
+                            <!-- radio:選項按鈕-->
+                            <!-- 一開始可以選多個所以要加入欄位:name才會變只能選一 -->
+                            <!-- 但男女等都是給使用者看的，所以選項按鈕要加入值value才可分辨; 一樣為變數可自訂-->
+                            <!-- &nbsp; 為空白符號 <br>:break斷行 -->
+                            <td>
+                                <input type="radio" name="sex" value="man">男性 &nbsp;
+                                <input type="radio" name="sex" value="woman">女性 &nbsp;
+                                <input type="radio" name="sex" value="secret">内緒 &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="200" align="right">
+                                興味なもの
+                            </td>
+                        <!-- checkbox核取方塊;勾選盒; 設了同欄位name，仍然可以多選-->                            
+                            <td>
+                                <input type="checkbox" name="inst" value="mv">MV
+                                <input type="checkbox" name="inst" value="live">ライブ
+                                <input type="checkbox" name="inst" value="games">ゲーム
+                                <!-- 多選時數值會是inst="mv,live,games" -->
+                            </td>
+                        </tr>                      
+                        <tr>
+                            <td width="200" align="right">
+                                一番好きなチーム
+                            </td>
+                            <td>
+                                <input type="text" name="loveteamsname">
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td width="200" align="right">
+                                地區
+                            </td>
+                            <!-- select:單選而選項太多 -->
+                            <td>
+                                <select name="area">
+                                    <option value="">ご選択ください</option>
+                                    <option value="Tokyo">東京都</option>
+                                    <option value="oosaka">大阪府</option>
+                                    <option value="shizuoka">静岡県</option>
+                                    <option value="hokkaido">北海道</option>
+                                    <option value="Taiwan">台湾</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="200" align="right">
+                                感想
+                            </td>
+                            <!-- textarea:可打很多內容的地方,若在中間有寫也會被加入使用者內容(value) -->
+                            <!-- cols:預設大小; -->
+                            <td>
+                                <textarea name="msg" cols="40" rows="15"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="200" align="right">
+                                
+                            </td>
+                            <!-- reset:重設;不會送到後台，預設為重設，可由value改名 -->
+                            <!-- submit:提交;送去後台，預設為提交，也可以改名 -->
+                            <td>
+                                <input type="reset" value="リセット">
+                                <input type="submit" value="送出">
+                            </td>
+                        </tr>
+
+                    </table>
+                </form>
+                
+            </td>
+        </tr>
+
+
+    </table>
+    <table border="0" width="1900" cellspacing="0">
+        <tr>
+            <td id="maintime">
+            <h1>連絡先</h1>
+                <ol>
+                <li>ウェブ責任者：鄭喬瀞</li>
+                <li>連絡先番号：0000000000</li>
+                <li>email：<a href="mailto:hellword@gmail.com.tw">mailto:hellword@gmail.com.tw</a></li>
+                <li>利用可能な時間：9:00~18:00</li>
+                </ol>
+            </td>
+        </tr>
+    </table>
+
+    
+
+
+    <table border="0" width="1900" cellspacing="0">
+        <tr>
+            <td  heighr="200">
+                <a href="https://twitter.com/idolypride"><img align="center" src="img/TwitterLogo.jpg" title="公式ツイッター"></a>
+            </td>
+            <td  heighr="200">
+                <a href="https://idolypride.jp/"><img align="center" src="img/Logo2.jpg" title="公式ホームページ"　heighr="200"></a>
+            </td>
+            <td  heighr="200">
+                    <a href="https://www.youtube.com/channel/UCOuzrlRFF7aSkooORw0XWRA"><img align="center" src="img/YT.jpg" title="公式YouTube"　heighr="200"></a>
+              </td>
+        </tr>
+
+    </table>
+
+
+
+
+</body>
+</html>

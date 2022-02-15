@@ -1,0 +1,105 @@
+﻿@using TryMVC.Models
+@model UserInfoModels
+@{
+    ViewBag.Title = "Create";
+
+    string ctlName = "UserService";
+
+    string postActionName = "Create";
+
+
+
+}
+
+
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card card-custom">
+            <!--begin::Card header-->
+            <div class="card-header">
+                <div class="card-title">
+                    <h3 class="card-label">
+                        @(this.Model.Account)
+                    </h3>
+                </div>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm(postActionName, ctlName, FormMethod.Post, new { @class = "form" }))
+                {
+                    <div class="tab-content">
+                        <!--begin::Tab-->
+                        <div class="tab-pane show px-7 active" id="kt_user_edit_tab_1" role="tabpanel">
+                            <!--begin::Row-->
+                            <div class="row">
+                                <div class="col-xl-2"></div>
+                                <div class="col-xl-7 my-2">
+                                    <!--begin::Row-->
+                                    <div class="row">
+                                        <label class="col-3"></label>
+                                        <div class="col-9">
+                                            <h6 class="text-dark font-weight-bold mb-10">個人資訊</h6>
+                                        </div>
+                                    </div>
+                                    <!--end::Row-->
+                                    <!--begin::Group-->
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-3 text-lg-right text-left">@Html.DisplayNameFor(model => model.Account)</label>
+                                        <div class="col-9">
+                                            <input class="form-control form-control-lg form-control-solid" type="text" name="account" value="@Html.DisplayFor(model => model.Account)" placeholder="please input Account">
+                                        </div>
+                                    </div>
+                                        <!--end::Row-->
+                                        <!--begin::Group-->
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-3 text-lg-right text-left">@Html.DisplayNameFor(model => model.pwd)</label>
+                                        <div class="col-9">
+                                            <input class="form-control form-control-lg form-control-solid" type="text" name="pwd" value="@Html.DisplayFor(model => model.pwd)" placeholder="please input password">
+                                        </div>
+                                    </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-3 text-lg-right text-left">@Html.DisplayNameFor(model => model.Name)</label>
+                                                <div class="col-9">
+                                                    <input class="form-control form-control-lg form-control-solid" type="text" name="Name" value="@Html.DisplayFor(model => model.Name)" placeholder="please input name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-3 text-lg-right text-left">@Html.DisplayNameFor(model => model.Email)</label>
+                                                <div class="col-9">
+                                                    <input class="form-control form-control-lg form-control-solid" type="email" name="Email" value="@Html.DisplayFor(model => model.Email)" placeholder="please input Email">
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-3 text-lg-right text-left">@Html.DisplayNameFor(model => model.Birthday)</label>
+                                                <div class="col-9">
+                                                    <input class="form-control form-control-lg form-control-solid" type="date" name="BTD" value="@Html.DisplayFor(model => model.Birthday)"  placeholder="please select Birthday">
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                        </div>
+                            </div>
+                            <!--end::Row-->
+                        </div>
+                        <!--end::Tab-->
+                    </div>
+
+                    <div class="d-flex justify-content-between border-top pt-10">
+                        <div class="mr-2">
+                            <a href="@Url.Action("Index", "UserService")" class="btn btn-light font-weight-bolder text-uppercase px-9 py-4">
+                                返回
+                            </a>
+                        </div>
+                        <div>
+                            <button type="submit" onclick="return confirm('確定新增使用者?')" class="btn btn-success font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">送出</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+                
+</div>

@@ -1,0 +1,44 @@
+
+#logo{
+    background-color:rgba(255, 255, 255, 0.7);
+    
+}
+#maintime{
+    background-color:rgba(255, 255, 255, 0.7);
+}
+#menu{
+    background-color:rgba(255, 255, 255, 0.7);
+}
+#contant{
+    background-color:rgba(255, 255, 255, 0.7);
+}
+#news{
+    background-color:rgba(255, 255, 255, 0.7);
+}
+
+#logo2{
+    background-color:rgba(0, 0, 0, 0.7);
+}
+#maintim2{
+    background-color:rgba(0, 0, 0, 0.7);
+}
+#menu2{
+    background-color:rgba(0, 0, 0, 0.7);
+}
+#contant2{
+    background-color:rgba(0, 0, 0, 0.7);
+}
+#news2{
+    background-color:rgba(0, 0, 0, 0.7);
+}
+
+.pic1 img{transform:scale(1,1);transition: all 0.5s ease-out;}
+.pic1 img:hover{transform:scale(1.4,1.4);}
+.pic1 img:hover{background-color:rgba(255, 255, 255, 0.3);}
+.pic1:hover{opacity: 0.9; position:absolute;  z-index:50}
+
+.pic2 img{transform:scale(1,1);transition: all 0.5s ease-out;}
+.pic2 img:hover{transform:scale(1.2,1.2);}
+.pic2 img:hover{background-color:rgba(255, 255, 255, 0.3);}
+.pic2:hover{opacity: 0.9; z-index:10;}
+

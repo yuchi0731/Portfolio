@@ -1,0 +1,75 @@
+﻿@model IEnumerable<TryMVC.Models.UserInfoModels>
+
+@{
+    ViewBag.Title = "人員管理システム";
+    string ctlName = "UserService";
+}
+
+<div class="row">
+    <div class="col-xl-12">
+        <!--begin::Card-->
+        <div class="card card-custom gutter-b">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3 class="card-label">
+                        @ViewBag.Title
+                    </h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>
+                    <a href="@Url.Action("Create")" class="btn btn-primary">
+                        <i class="flaticon2-plus"></i> 追加
+                    </a>
+                </p>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" class="col-sm-3">@Html.DisplayNameFor(model => model.Account)</th>
+                            <th scope="col" class="col-sm-2">@Html.DisplayNameFor(model => model.Name)</th>
+                            <th scope="col" class="col-sm-2">@Html.DisplayNameFor(model => model.Email)</th>
+                            <th scope="col" class="col-sm-2">@Html.DisplayNameFor(model => model.Birthday)</th>
+                            <th scope="col" class="col-sm-3">Act</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td scope="row">
+                                    @Html.DisplayFor(modelItem => item.Account)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Birthday)
+                                </td>
+                                <td>
+                                    <div class="d-flex flex-row">
+                                        <a href="@Url.Action("Edit", new { account = item.Account })" class="btn btn-warning">
+                                            <i class="flaticon2-pen"></i> 編集
+                                        </a>
+                                        &nbsp;
+                                        @using (@Html.BeginForm("Delete", ctlName, FormMethod.Post, new { @class = "form-column" }))
+                                        {
+                                    <button type="submit" class="btn btn-danger" name="BtnType" value="Delete" onclick="return confirm('您確定要刪除嗎?')">
+                                        <i class="flaticon2-delete"></i> 削除
+                                        @Html.Hidden("account", item.Account)
+                                    </button>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--end::Card-->
+    </div>
+</div>
+
